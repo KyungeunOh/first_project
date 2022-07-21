@@ -1,0 +1,8 @@
+# TODO (Database 접속 정보 추가)
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/nhn?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password: Nhndev132!

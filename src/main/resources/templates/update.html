@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>상품 수정</title>
+</head>
+<body>
+    <h1>상품 수정</h1>
+    <form action="/product/update" method="post">
+        <div>
+            <label>상품번호</label>
+            <input type="number" class="form-control" name="productNo"
+                   th:value="${product.productNo}" readonly>
+        </div>
+        <div class="form-group">
+            <label>상품이름</label>
+            <input type="text" class="form-control" name="productName"
+                   th:value="${product.productName}">
+        </div>
+        <div class="form-group">
+            <label>상품가격</label>
+            <input type="number" class="form-control" name="salePrice"
+                   th:value="${product.salePrice}">
+        </div>
+        <button type="submit">완료</button>
+    </form>
+</body>
+</html>

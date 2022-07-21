@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>상품 목록</title>
+</head>
+<body>
+    <h1>상품 목록</h1>
+
+    <table border="1">
+        <tr>
+            <th>상품 번호</th>
+            <th>상품 이름</th>
+            <th>상품 가격</th>
+            <th>등록 날짜</th>
+            <th>수정 날짜</th>
+            <th>수정</th>
+            <th>삭제</th>
+            <th>상세</th>
+        </tr>
+
+        <tr th:each="product : ${productList}">
+            <td th:text="${product.productNo}"></td>
+            <td th:text="${product.productName}"></td>
+            <td th:text="${product.salePrice}"></td>
+            <td th:text="${product.registerYmdt}"></td>
+            <td th:text="${product.updateYmdt}"></td>
+            <td><button type="button" th:onclick="|location.href='@{/product/update/{productNo}(productNo=${product.productNo})}'|">수정</button></td>
+            <td><button type="button" th:onclick="|location.href='@{/product/delete(productNo=${product.productNo})}'|">삭제</button></td>
+            <td><button type="button" th:onclick="|location.href='@{/product/{productNo}(productNo=${product.productNo})}'|">상세</button></td>
+        </tr>
+    </table>
+
+    <button type="button" th:onclick="|location.href='@{/product/add}'|">추가</button>
+</body>
+</html>
